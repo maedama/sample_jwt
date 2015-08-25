@@ -29,6 +29,7 @@ public class App {
 		JWSSigner signer = factory.build("etc/private_key.pk8");
 		
 		JWTClaimsSet claimsSet = new JWTClaimsSet();
+		claimsSet.setCustomClaim("typ", "id_token");
 		claimsSet.setJWTID(UUID.randomUUID().toString());
 		claimsSet.setSubject("100");
 		claimsSet.setIssuer("https://maedama.com");
